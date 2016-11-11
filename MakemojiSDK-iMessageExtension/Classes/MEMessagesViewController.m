@@ -24,7 +24,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [MEStickerAPIManager setSdkKey:@"940ced93abf2ca4175a4a865b38f1009d8848a58"];
         self.shareText = @"Check out the Makemoji SDK: http://makemoji.com";
     }
     return self;
