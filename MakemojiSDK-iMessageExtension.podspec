@@ -1,42 +1,22 @@
-#
-# Be sure to run `pod lib lint MakemojiSDK-iMessageExtension.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'MakemojiSDK-iMessageExtension'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MakemojiSDK-iMessageExtension.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.version          = '1.0.1'
+  s.summary          = "A free emoji iMessage extension"
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                       By installing our iMessage SDK every user of your app will instantly have access to new and trending emojis.  Our goal is to increase user engagement as well as provide actionable real time data on sentiment (how users feel) and affinity (what users like). With this extensive data collection your per-user & company valuation will increase along with your user-base.
                        DESC
-
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/MakemojiSDK-iMessageExtension'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Stephen Schroeder' => 'steve.frederick.lp@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/MakemojiSDK-iMessageExtension.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'MakemojiSDK-iMessageExtension/Classes/**/*'
+                       
+  s.homepage         = 'http://makemoji.com'
+  s.license      	 = { :type => 'Commercial' }
+  s.author           = { 'Makemoji' => 'contact@makemoji.com' }
+  s.source           = { :git => 'https://github.com/makemoji/MakemojiSDK-iMessageExtension.git', :tag => s.version.to_s }
   
-  # s.resource_bundles = {
-  #   'MakemojiSDK-iMessageExtension' => ['MakemojiSDK-iMessageExtension/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.deployment_target = '10.0'
+  s.source_files = 'MakemojiSDK-iMessageExtension/Classes/**/*'
+  s.resources = ['MakemojiSDK-iMessageExtension/Assets/*']
+  s.frameworks = 'Foundation', 'SystemConfiguration', 'UIKit', 'Messages', 'AdSupport'
+  s.dependency 'AFNetworking', '>= 2.6.3'
+  s.dependency 'SDWebImage', '>= 3.7.3'
+  s.requires_arc = true
+  
 end

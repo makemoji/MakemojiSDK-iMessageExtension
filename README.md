@@ -1,29 +1,56 @@
-# MakemojiSDK-iMessageExtension
+MakemojiSDK-iMessageExtension
+====================
 
-[![CI Status](http://img.shields.io/travis/Stephen Schroeder/MakemojiSDK-iMessageExtension.svg?style=flat)](https://travis-ci.org/Stephen Schroeder/MakemojiSDK-iMessageExtension)
-[![Version](https://img.shields.io/cocoapods/v/MakemojiSDK-iMessageExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-iMessageExtension)
-[![License](https://img.shields.io/cocoapods/l/MakemojiSDK-iMessageExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-iMessageExtension)
-[![Platform](https://img.shields.io/cocoapods/p/MakemojiSDK-iMessageExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-iMessageExtension)
+![](http://i.imgur.com/mMZQ9b7.png)
 
-## Example
+**Makemoji** is a free emoji iMessage extension for mobile apps. 
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+By installing our iMessage SDK every user of your app will instantly have access to new and trending emojis. Our goal is to increase user engagement as well as provide actionable real time data on sentiment (how users feel) and affinity (what users like). With this extensive data collection your per-user & company valuation will increase along with your user-base.
+ 
+**Features Include**
 
-## Requirements
+* Extensive library of free emoji
+* 722 standard Unicode emoji
+* Makemoji *Flashtag* inline search system
 
-## Installation
+![](http://i.imgur.com/RHEXBbO.gif)
 
-MakemojiSDK-iMessageExtension is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+* New emoji load dynamically and does not require a app update
+* Analytics Dashboard & CMS
 
-```ruby
-pod "MakemojiSDK-iMessageExtension"
-```
+To obtain your SDK key please email: sdk@makemoji.com
 
-## Author
+**[Learn More](http://makemoji.com)**
 
-Stephen Schroeder, steve.frederick.lp@gmail.com
+**[Documentation and Walkthroughs](http://makemoji.com/docs/)**
 
-## License
 
-MakemojiSDK-iMessageExtension is available under the MIT license. See the LICENSE file for more info.
+
+FAQ
+---------------------
+
+*	The Makemoji SDK is completely free.
+
+*	All emojis are served from AWS S3.
+
+*	We do not store your messages. Your app backend will have to process and serve messages created with our SDK.
+
+*	We do not send push notifications.
+
+*	Your app's message volume does not affect the performance of our SDK.
+
+*	Messages are composed of simple HTML containing image and paragraph tags. Formatting is presented as inline CSS.
+
+*	Will work with any built-in iOS keyboard or return type
+
+*  All network operations happen asyncronously and do not block the User Interface
+
+Service Performance
+---------------------
+
+* Avg Service Response Time: 100ms
+ 
+* Hosted with AWS using Elastic Beanstalk & RDS
+
+* Scales seamlessly to meet traffic demands
+
