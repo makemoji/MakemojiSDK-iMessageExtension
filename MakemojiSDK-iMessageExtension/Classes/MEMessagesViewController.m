@@ -32,9 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.placeholderSticker = [[MSSticker alloc] initWithContentsOfFileURL:[[NSBundle mainBundle] URLForResource:@"MEPlaceholder" withExtension:@"png" subdirectory:nil localization:nil]
-                                                      localizedDescription:@"Placeholder"
-                                                                     error:nil];
+    self.placeholderSticker = [[MSSticker alloc] initWithContentsOfFileURL:[[NSBundle mainBundle] URLForResource:@"MEPlaceholder@2x" withExtension:@"png" subdirectory:nil localization:nil] localizedDescription:@"Placeholder" error:nil];
+    
     // setup share button
     self.shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.shareButton setTitle:@"SHARE" forState:UIControlStateNormal];
