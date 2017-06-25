@@ -17,5 +17,14 @@
           placeholderSticker:(MSSticker *)placeholder
                      options:(SDWebImageOptions)options
                     progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                   completed:(SDWebImageCompletionBlock)completedBlock;
+                   completed:(SDInternalCompletionBlock)completedBlock;
 @end
+
+#ifndef dispatch_main_sync_safe
+#define dispatch_main_sync_safe(block)\
+if ([NSThread isMainThread]){\
+block();\
+} else {\
+dispatch_sync(dispatch_get_main_queue(), block);\
+}
+#endif

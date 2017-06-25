@@ -20,7 +20,7 @@ static char TAG_ACTIVITY_SHOW;
           placeholderSticker:(MSSticker *)placeholder
                      options:(SDWebImageOptions)options
                     progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                   completed:(SDWebImageCompletionBlock)completedBlock {
+                   completed:(SDInternalCompletionBlock)completedBlock {
     [self sd_cancelCurrentImageLoad];
     objc_setAssociatedObject(self, &imageURLKey, url, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (!(options & SDWebImageDelayPlaceholder)) {
@@ -33,14 +33,14 @@ static char TAG_ACTIVITY_SHOW;
             [self addActivityIndicator];
         }
         __weak __typeof(self)wself = self;
-        id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager loadImageWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSData * data, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             [wself removeActivityIndicator];
             if (!wself) return;
             dispatch_main_sync_safe(^{
                 if (!wself) return;
                 if (image && (options & SDWebImageAvoidAutoSetImage) && completedBlock)
                 {
-                    completedBlock(image, error, cacheType, url);
+                    completedBlock(image, data, error, cacheType, finished, url);
                     return;
                 }
                 else if (image) {
@@ -62,7 +62,7 @@ static char TAG_ACTIVITY_SHOW;
                     }
                 }
                 if (completedBlock && finished) {
-                    completedBlock(image, error, cacheType, url);
+                    completedBlock(image, data, error, cacheType, finished, url);
                 }
             });
         }];
@@ -72,7 +72,7 @@ static char TAG_ACTIVITY_SHOW;
             [self removeActivityIndicator];
             if (completedBlock) {
                 NSError *error = [NSError errorWithDomain:SDWebImageErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey : @"Trying to load a nil url"}];
-                completedBlock(nil, error, SDImageCacheTypeNone, url);
+                completedBlock(nil, nil, error, SDImageCacheTypeNone, YES, url);
             }
         });
     }
