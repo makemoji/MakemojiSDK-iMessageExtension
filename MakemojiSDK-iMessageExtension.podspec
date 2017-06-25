@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.resources = ['MakemojiSDK-iMessageExtension/Assets/*']
   s.frameworks = 'Foundation', 'SystemConfiguration', 'UIKit', 'Messages', 'AdSupport'
   s.dependency 'AFNetworking', '>= 2.6.3'
-  s.dependency 'SDWebImage', '>= 3.8.2'
+  s.dependency 'SDWebImage', '>= 4.0'
   s.requires_arc = true
   
 end
