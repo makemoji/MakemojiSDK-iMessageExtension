@@ -34,7 +34,9 @@
     self.isSearching = NO;
     self.searchResults = [NSMutableArray array];
     self.automaticallyAdjustsScrollViewInsets = YES;
-    self.placeholderSticker = [[MSSticker alloc] initWithContentsOfFileURL:[[NSBundle mainBundle] URLForResource:@"MEPlaceholder@2x" withExtension:@"png" subdirectory:nil localization:nil] localizedDescription:@"Placeholder" error:nil];
+    NSURL * podBundle = [[NSBundle mainBundle] URLForResource:@"MakemojiSDK-iMessageExtension.bundle/MEPlaceholder@2x" withExtension:@"png"];
+    
+    self.placeholderSticker = [[MSSticker alloc] initWithContentsOfFileURL:podBundle localizedDescription:@"Placeholder" error:nil];
     
     // setup share button
     self.shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
