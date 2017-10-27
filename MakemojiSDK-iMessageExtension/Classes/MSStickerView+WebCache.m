@@ -51,6 +51,9 @@ static char TAG_ACTIVITY_SHOW;
                             if ( [[NSFileManager defaultManager] fileExistsAtPath:cachePath] ) {
                                 MSSticker *loadSticker = [[MSSticker alloc] initWithContentsOfFileURL:[NSURL fileURLWithPath:cachePath] localizedDescription:@"hello word" error:nil];
                                 wself.sticker = loadSticker;
+                                if ([url.absoluteString containsString:@"gif"]) {
+                                    [wself startAnimating];
+                                }
                                 [wself setNeedsLayout];
                             }
                         }

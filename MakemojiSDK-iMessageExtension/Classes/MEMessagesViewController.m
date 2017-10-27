@@ -354,6 +354,8 @@
       emoji = [[self emojiArrayForSection:indexPath.section] objectAtIndex:indexPath.item];
     }
     
+    [collectionCell.stickerView stopAnimating];
+    
     NSString * imageUrl = [emoji objectForKey:@"image_url"];
     [collectionCell.stickerView sd_setStickerWithURL:[NSURL URLWithString:imageUrl] placeholderSticker:self.placeholderSticker options:0 progress:nil completed:nil];
     [[MEStickerAPIManager manager] imageViewWithId:[emoji objectForKey:@"id"]];
