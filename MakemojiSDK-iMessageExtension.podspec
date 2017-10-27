@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MakemojiSDK-iMessageExtension'
-  s.version          = '1.0.10'
+  s.version          = '1.0.11'
   s.summary          = "A free emoji iMessage extension"
   s.description      = <<-DESC
                        By installing our iMessage SDK every user of your app will instantly have access to new and trending emojis.  Our goal is to increase user engagement as well as provide actionable real time data on sentiment (how users feel) and affinity (what users like). With this extensive data collection your per-user & company valuation will increase along with your user-base.
