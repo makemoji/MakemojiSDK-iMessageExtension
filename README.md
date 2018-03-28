@@ -22,7 +22,7 @@ To obtain your SDK key please email: sdk@makemoji.com
 
 **[Learn More](http://makemoji.com)**
 
-**[Documentation and Walkthroughs](http://makemoji.com/docs/)**
+**[Documentation and Walkthroughs](http://makemoji.com/docs/imessageextension/)**
 
 
 
